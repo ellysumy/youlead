@@ -1,0 +1,84 @@
+
+#countdown {
+  width: 100%;
+}
+label {
+  clear: both;
+  display: block;
+}
+#countdown span {
+  background: red;
+  color: #FFF;
+  font-size: 26px;
+  font-weight: normal;
+  text-align: center;
+  width: 25%;
+  dispaly: block;
+  float: left;
+  border-right: 1px solid #FFF;
+}
+#countdown span:last-child {
+  border-right: 1px solid #313233;
+}
+}
+
+
+
+h1{
+  color: #396;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+#clockdiv{
+    font-family: sans-serif;
+    color: #000;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#clockdiv > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+}
+
+#clockdiv div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #fff;
+    display: inline-block;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+#clockdiv1{
+    font-family: sans-serif;
+    color: #000;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+#clockdiv1 > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #grey;
+    display: inline-block;
+}
+
+#clockdiv1 div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #fff;
+    display: inline-block;
+}
+

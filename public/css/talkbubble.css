@@ -1,0 +1,119 @@
+.talkbubble {
+      
+      background: #ED1F2E;
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+
+    }
+    .talkbubble:after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 30px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-left: 26px solid #ED1F2E;
+      border-bottom: 13px solid transparent;
+      padding-right: 30px;
+    }
+
+
+    .talkbubble2 {
+      
+      background: #3A3A3C;
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+    .talkbubble2:before {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 80px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid #3A3A3C;
+      border-bottom: 13px solid transparent;
+    }
+
+    .talkbubble3 {
+      
+      background: #2EB01C;;
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+    .talkbubble3:before {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 120px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid #2EB01C;;
+      border-bottom: 13px solid transparent;
+    }
+
+    .talkbubble4 {
+      
+      background: red;
+      border-color: black;
+      border-style: solid;
+    
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+    /*.talkbubble4:before {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 50px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid red;
+      border-bottom: 13px solid transparent;
+    }
+*/
+
+    .vl {
+  border-left: 6px solid green;
+  height: 240px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+.talkbubble5 {
+      
+      background: #3A3A3C;
+      border-color: black;
+      border-style: solid;
+      
+      position: relative;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+
+    }
+    .talkbubble5:after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 20px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-left: 26px solid #3A3A3C;
+      border-bottom: 13px solid transparent;
+      padding-right: 30px;
+    }
