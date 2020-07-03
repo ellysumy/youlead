@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>YouLead Summit | Dashboard</title>
+  <link rel="icon" href="/youleadsummit.org/public/frontend/img/favicon.png" type="image/png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -54,10 +55,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('profile') }}"
+                                    
+                                     <a class="dropdown-item" href="{{ route('profile') }}"
                                        ><i class="fa fa-btn fa-user"></i>
                                         {{ __('Your profile') }}
                                     </a>
+
                                      <a class="dropdown-item" href="{{ route('logout') }}" 
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fa fa-btn fa-sign-out"></i>
@@ -227,10 +230,11 @@
              
           <li class="nav-header">Action</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Edit Profile</p>
-            </a>
+            <a class="dropdown-item" href="{{ route('usercreate', $user->id) }}"
+                                       ><i class="fa fa-btn fa-circle text-danger"></i>
+                                        {{ __('Edit Profile') }}
+                                    </a>
+            
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -255,72 +259,11 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>2000</h3>
-
-                <p>Delegates</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>300<sup style="font-size: 20px"></sup></h3>
-
-                <p>Partners</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
+     
         <!-- /.row -->
        <div class="container" style="border-color: grey;">
     @yield('content')
+
   </div>
 
 

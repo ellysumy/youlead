@@ -3,19 +3,42 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+       
         <div>
+          <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
             <div class="card">
               
-                 <img src="public/uploads/avatars/{{$user->avatar}}" style="width: 150px; float:left;  height: 150px;border-radius: 50%;margin-right: 25px;">
+                
 
-               <h2>{{ $user->name}}`s Profile </h2>
+               <h2>{{ $user->first_name}}`s Profile </h2>
+                              
+                 <img src="public/uploads/avatars/{{$user->id}}/{{$user->avatar}}" style="width: 150px; float:left;  height: 150px;border-radius: 50%;margin-right: 25px;">
+                 
+                 <div class="row">
+                  <div class="col-md-3" style="padding-top: 15px; padding-left: 10px;">
+                  <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#avatar">
+                        Change Avatar?
+                   </button>
+              </div>
+               <div class="container col-md-7 " style="background-color: green; color: white;"><p> Welcome {{ $user->first_name}} this is your profile place. You can update or create your profile now.</p></div>
+               </div>
 
 
 
 <table class="table table-striped" >
     <thead>
         <tr>
-          <td>ID</td>
+          
           
           
            <td>First Name</td>
@@ -31,9 +54,16 @@
     <tbody>
        
         <tr style="border-color: red; border: 2px;">
-            <td>{{$user->id}}</td>
            
-            <td>{{$user->name}}</td>
+           
+            <td>{{$user->first_name}}</td>
+
+            <td>{{$user->last_name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->job_title}}</td>
+            <td>{{$user->city}}</td>
+            <td>{{$user->country}}</td>
+            <td><button>Edit</button></td>
             
         </tr>
            
@@ -48,7 +78,7 @@
           <h2> Biography</h2>
             <p>
               
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              <td>{{$user->biography}}</td>
             </p>
         </div>
             
@@ -56,14 +86,46 @@
   <hr/>
 
 
-               <form enctype="multipart/form-data" action="{{ route('update') }}" method="POST">
+               <!-- <form enctype="multipart/form-data" action="{{ route('update') }}" method="POST">
                <label> Change Avatar</label> 
                <input type="file" name="avatar">
+               <input type="text" name="last_name">
+               <input type="hidden" name="_token" value="{{csrf_token()}}">
+               <input type="submit" value ="submit" class="pull-right btn btn-sm btn-primary" >
+           </form> -->
+           <!-- The Modal -->
+  <div class="modal" id="avatar">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Update your profile picture</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form enctype="multipart/form-data" action="{{ route('update') }}" method="POST">
+               <label> Upload Avatar</label> 
+               <input type="file" name="avatar">
+              
                <input type="hidden" name="_token" value="{{csrf_token()}}">
                <input type="submit" value ="submit" class="pull-right btn btn-sm btn-primary" >
            </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+         <!--    -->
+        </div>
+        
+      </div>
+    </div>
+  </div>
             </div>
         </div>
     </div>
+
 </div>
 @endsection
